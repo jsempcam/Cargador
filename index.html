@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Encuentra tu Cargador</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Encuentra tu Cargador</h1>
+  </header>
+
+  <!-- Filtros de búsqueda -->
+  <h2>Buscar cargadores</h2>
+  <form id="filtrosCargador">
+    <select id="tipoCargador">
+      <option value="">Todos los tipos</option>
+      <option value="rapido">Rápido</option>
+      <option value="estandar">Estándar</option>
+      <option value="compatible">Compatible</option>
+    </select>
+    <button onclick="buscarCargadores(); return false">Buscar</button>
+  </form>
+
+  <!-- Mapa de cargadores (puede ser un div con un mapa renderizado por JS) -->
+  <h2>Mapa de Cargadores</h2>
+  <div id="mapa" style="height: 400px; border: 1px solid #ccc; margin: 1%;"></div>
+
+  <!-- Lista de cargadores encontrados -->
+  <h2>Lista de Cargadores</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Tipo</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="listaCargadores"></tbody>
+  </table>
+
+  <!-- Modal para ver o reservar cargador -->
+  <div id="modal" class="modal">
+    <div class="modal-contenido">
+      <span id="cerrarModal" class="cerrarModal">&times;</span>
+      <h2>Detalle del Cargador</h2>
+      <p id="detalleCargador"></p>
+      <button onclick="reservarCargador()">Reservar</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
